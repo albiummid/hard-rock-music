@@ -7,6 +7,8 @@ const searchSong = async () => {
     }
     catch(error){
         displayError("Something went wrong! Please try again letter!");
+        document.getElementById("lyrics").style.display = "none";
+        document.getElementById("song-container").innerHTML = "";
     }
     
 }
@@ -23,6 +25,8 @@ const searchSong = async () => {
 const displaySongs = songs => {
     const songContainer = document.getElementById('song-container');
     songContainer.innerHTML = '';
+    document.getElementById("lyrics").style.display = "none";
+    document.getElementById("errorTag").innerText = '';
 
     songs.forEach(song => {
         const songDiv = document.createElement("div");
@@ -59,8 +63,10 @@ const getLyric = async (artist, title) => {
 // }
 
 const displayLyrics = lyrics => {
-    const lyricDiv = document.getElementById("song-lyrics");
-    lyricDiv.innerText = lyrics;
+    const lyricsAria = document.getElementById("lyrics");
+    lyricsAria.value = lyrics;
+    lyricsAria.style.display = "block"
+    console.log(lyrics);
 }
 
 const displayError = error => {
