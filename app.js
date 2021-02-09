@@ -5,7 +5,8 @@ const searchSong = async() =>{
     displaySongs(data.data);
 }
 
-// by .then
+// const searchSong = async() =>{
+//const searchText = document.getElementById('search-field').value;
 // fetch(`https://api.lyrics.ovh/suggest/${searchText}`)
 // // load data
 // .then(res => res.json())
@@ -42,7 +43,7 @@ const data = await res.json();
 displayLyrics(data.lyrics);
 }
 
-// by .then
+// const getLyric = async(artist, title) => {
 // fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
 // .then(res => res.json())
 // .then(data => displayLyrics(data.lyrics))
