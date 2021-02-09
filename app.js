@@ -1,7 +1,8 @@
 const searchSong = async () => {
     const searchText = document.getElementById('search-field').value;
     try {
-        const res = await fetch(`https://api.lyrics.ovh/suggest/${searchText}`);
+        const url = `https://api.lyrics.ovh/suggest/${searchText}`
+        const res = await fetch(url);
         const data = await res.json();
         displaySongs(data.data);
     }
@@ -49,7 +50,8 @@ const displaySongs = songs => {
 }
 
 const getLyric = async (artist, title) => {
-    const res = await fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`);
+    const url = `https://api.lyrics.ovh/v1/${artist}/${title}`
+    const res = await fetch(url);
     const data = await res.json();
     displayLyrics(data.lyrics);
 }
